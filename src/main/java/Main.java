@@ -8,19 +8,21 @@ public class Main {
                 .build();
         Person son = mom.newChildBuilder()
                 .setName("Антошка")
+                .setAge(10)
+                .setAddress("Россия")
                 .build();
         System.out.println("У " + mom + " есть сын, " + son);
 
 
         try {
             new PersonBuilder().setName("Виталик").setSurname("Иванов").setAge(23).setAddress("Россия").build();
-        }catch (IllegalStateException ex){
+        } catch (IllegalStateException ex) {
             System.out.println(ex.getMessage());
         }
 
         try {
             new PersonBuilder().setName("Никита").setSurname("Петров").setAge(-400).setAddress("Россия").build();
-        }catch (IllegalStateException ex){
+        } catch (IllegalStateException ex) {
             System.out.println(ex.getMessage());
         }
 

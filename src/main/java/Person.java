@@ -21,6 +21,10 @@ public class Person {
         this(name, surname, OptionalInt.of(age), null);
     }
 
+    public Person(String name, String surname, int age, String address) {
+        this(name, surname, OptionalInt.of(age), address);
+    }
+
     public boolean hasAge() {
         return age.isPresent();
     }

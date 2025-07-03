@@ -34,7 +34,7 @@ public class PersonBuilder {
 
     public Person build() {
         if (name == null || name.isEmpty()) {
-            throw new IllegalArgumentException("Поле name = null");
+            throw new IllegalStateException("Поле name = null");
         }
         if (surname == null || surname.isEmpty()) {
 

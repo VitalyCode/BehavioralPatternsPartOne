@@ -16,6 +16,10 @@ public class PersonBuilder {
 
     public PersonBuilder setAge(int age) {
         if (age < 0) {
+
+            // Если же мы передали неподходящие данные билдеру (например, некорректный возрст builder.setAge(-100)),
+            // то именно этот метод должен выкинуть IllegalArgumentException с осмысленным сообщением.
+
             throw new IllegalArgumentException("Возраст отрицательный");
         }
         this.age = age;
@@ -27,15 +31,17 @@ public class PersonBuilder {
         return this;
     }
 
-    // Создайте класс PersonBuilder, наполните его полями для данных будущего объекта класса Person и методами их наполняющими.
-    // (не забудьте про "IllegalArgumentException" в случае ввода недопустимых данных)
 
     public Person build() {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("Поле name = null");
         }
         if (surname == null || surname.isEmpty()) {
-            throw new IllegalArgumentException("Поле surname = null");
+
+            // В случае, если мы билдеру не указали достаточное количество данных (например, не указали фамилию),
+            // то метод build() должен выкинуть IllegalStateException с осмысленным сообщением.
+
+            throw new IllegalStateException("Поле surname = null");
         }
         if (age != null) {
             return new Person(name, surname, age);

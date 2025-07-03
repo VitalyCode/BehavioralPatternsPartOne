@@ -21,7 +21,7 @@ public class Main {
                     .setAge(23)
                     .setAddress("Россия")
                     .build();
-        } catch (IllegalStateException ex) {
+        } catch (IllegalStateException | IllegalArgumentException ex) {
             System.out.println(ex.getMessage());
         }
 
@@ -32,7 +32,7 @@ public class Main {
                     .setAge(-400)
                     .setAddress("Россия")
                     .build();
-        } catch (IllegalStateException ex) {
+        } catch (IllegalArgumentException | IllegalStateException ex) {
             System.out.println(ex.getMessage());
         }
 

@@ -15,13 +15,23 @@ public class Main {
 
 
         try {
-            new PersonBuilder().setName("Виталик").setSurname("Иванов").setAge(23).setAddress("Россия").build();
+            new PersonBuilder()
+                    .setName("Виталик")
+                    .setSurname("Иванов")
+                    .setAge(23)
+                    .setAddress("Россия")
+                    .build();
         } catch (IllegalStateException ex) {
             System.out.println(ex.getMessage());
         }
 
         try {
-            new PersonBuilder().setName("Никита").setSurname("Петров").setAge(-400).setAddress("Россия").build();
+            new PersonBuilder()
+                    .setName("Никита")
+                    .setSurname("Петров")
+                    .setAge(-400)
+                    .setAddress("Россия")
+                    .build();
         } catch (IllegalStateException ex) {
             System.out.println(ex.getMessage());
         }

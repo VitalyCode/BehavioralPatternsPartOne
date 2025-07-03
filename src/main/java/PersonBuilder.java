@@ -27,6 +27,9 @@ public class PersonBuilder {
         return this;
     }
 
+    // Создайте класс PersonBuilder, наполните его полями для данных будущего объекта класса Person и методами их наполняющими.
+    // (не забудьте про "IllegalArgumentException" в случае ввода недопустимых данных)
+
     public Person build() {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("Поле name = null");
